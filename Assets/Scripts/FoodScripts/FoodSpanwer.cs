@@ -17,6 +17,11 @@ public class FoodSpawner: MonoBehaviour
         SpawnFood();
     }
 
+    public void RespawnFood()
+    {
+        SpawnFood();
+    }
+    
     private void SpawnFood()
     {
         if (currentFood != null)
