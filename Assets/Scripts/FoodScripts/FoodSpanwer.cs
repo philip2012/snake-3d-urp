@@ -5,6 +5,7 @@ public class FoodSpawner: MonoBehaviour
     [SerializeField] private GameObject applePrefab;
     [SerializeField] private GameObject ground;
     [SerializeField] private float spawnPadding = 1f;
+    [SerializeField] private float spawnHeightOffset = 0.5f;
 
     private Bounds groundBounds;
     private Renderer groundRenderer;
@@ -21,7 +22,7 @@ public class FoodSpawner: MonoBehaviour
     {
         SpawnFood();
     }
-    
+
     private void SpawnFood()
     {
         if (currentFood != null)
@@ -29,9 +30,9 @@ public class FoodSpawner: MonoBehaviour
             Destroy(currentFood);
         }
         float paddedRandomX = Random.Range(groundBounds.min.x + spawnPadding, groundBounds.max.x - spawnPadding);
-        float yPos = groundBounds.max.y;
+        float paddedYPos = groundBounds.max.y + spawnHeightOffset;
         float paddedRandomZ = Random.Range(groundBounds.min.z + spawnPadding, groundBounds.max.z - spawnPadding);
-        Vector3 newPos = new Vector3(paddedRandomX, yPos, paddedRandomZ);
+        Vector3 newPos = new Vector3(paddedRandomX, paddedYPos, paddedRandomZ);
 
         currentFood = Instantiate(applePrefab, newPos, Quaternion.identity);
     }
