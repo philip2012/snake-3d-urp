@@ -558,6 +558,8 @@ GameObject:
   - component: {fileID: 832481912}
   - component: {fileID: 832481911}
   - component: {fileID: 832481916}
+  - component: {fileID: 832481917}
+  - component: {fileID: 832481918}
   m_Layer: 0
   m_Name: SnakeHead
   m_TagString: Untagged
@@ -688,6 +690,46 @@ MonoBehaviour:
   cyan:
     serializedVersion: 2
     rgba: 33554176
+--- !u!54 &832481917
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 832481910}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &832481918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 832481910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e25a32cc523a44490a52755b5f74c106, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SnakeCollision
+  foodSpawner: {fileID: 1482440107}
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -737,43 +779,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &919403747 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7050414065739957906, guid: e65ccc5c45fc042518b1444853afa2ae, type: 3}
-  m_PrefabInstance: {fileID: 1671937029527553725}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1322497507
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1322497508}
-  m_Layer: 0
-  m_Name: ApplePickup
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1322497508
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1322497507}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.82072, y: 0.5, z: 2.91544}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 919403747}
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1482440106
 GameObject:
   m_ObjectHideFlags: 0
@@ -803,10 +808,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aeabe18d377b34a8bad469a3140b2ef0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FoodSpawner
-  applePrefab: {fileID: 1322497507}
+  applePrefab: {fileID: 4024775591966762521, guid: 400a793a76910425c963c25384b6588f, type: 3}
   ground: {fileID: 1970345531}
   spawnPadding: 1
-  spawnHeightOffset: 0.7
+  spawnHeightOffset: 0.5
 --- !u!4 &1482440108
 Transform:
   m_ObjectHideFlags: 0
@@ -1060,63 +1065,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2100288418}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1001 &1671937029527553725
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 1322497508}
-    m_Modifications:
-    - target: {fileID: 7050414065739957906, guid: e65ccc5c45fc042518b1444853afa2ae, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 3.82072
-      objectReference: {fileID: 0}
-    - target: {fileID: 7050414065739957906, guid: e65ccc5c45fc042518b1444853afa2ae, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.44
-      objectReference: {fileID: 0}
-    - target: {fileID: 7050414065739957906, guid: e65ccc5c45fc042518b1444853afa2ae, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -2.91544
-      objectReference: {fileID: 0}
-    - target: {fileID: 7050414065739957906, guid: e65ccc5c45fc042518b1444853afa2ae, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 7050414065739957906, guid: e65ccc5c45fc042518b1444853afa2ae, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 7050414065739957906, guid: e65ccc5c45fc042518b1444853afa2ae, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7050414065739957906, guid: e65ccc5c45fc042518b1444853afa2ae, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7050414065739957906, guid: e65ccc5c45fc042518b1444853afa2ae, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7050414065739957906, guid: e65ccc5c45fc042518b1444853afa2ae, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7050414065739957906, guid: e65ccc5c45fc042518b1444853afa2ae, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7679704511189441576, guid: e65ccc5c45fc042518b1444853afa2ae, type: 3}
-      propertyPath: m_Name
-      value: modelPrefab
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: e65ccc5c45fc042518b1444853afa2ae, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -1127,4 +1075,3 @@ SceneRoots:
   - {fileID: 257282804}
   - {fileID: 832481915}
   - {fileID: 1482440108}
-  - {fileID: 1322497508}

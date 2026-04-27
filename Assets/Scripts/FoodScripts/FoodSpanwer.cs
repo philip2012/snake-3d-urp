@@ -28,6 +28,7 @@ public class FoodSpawner: MonoBehaviour
         if (currentFood != null)
         {
             Destroy(currentFood);
+            currentFood = null;
         }
         float paddedRandomX = Random.Range(groundBounds.min.x + spawnPadding, groundBounds.max.x - spawnPadding);
         float paddedYPos = groundBounds.max.y + spawnHeightOffset;
