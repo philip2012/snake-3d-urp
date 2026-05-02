@@ -10,6 +10,10 @@ public class ScoreManager: MonoBehaviour
     [SerializeField] private int baseFoodScore = 10;
     [SerializeField] private float comboResetTime = 3f;
 
+    // getters for any script's interest in these values
+    public int Score => score;
+    public int Combo => combo;
+
     void Update()
     {
         if (comboTimer > 0)
