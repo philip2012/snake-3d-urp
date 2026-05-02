@@ -4,6 +4,7 @@ public class SnakeCollision: MonoBehaviour
 {
     [SerializeField] private FoodSpawner foodSpawner;
     [SerializeField] private SnakeGrowth snakeGrowth;
+    [SerializeField] private ScoreManager scoreManager;
 
     private bool isConsumingFood;
 
@@ -22,6 +23,7 @@ public class SnakeCollision: MonoBehaviour
 
         foodSpawner.RespawnFood();
         snakeGrowth.Grow();
+        scoreManager.AddFoodScore();
 
         Invoke(nameof(ResetConsumeLock), 0.1f);
     }
