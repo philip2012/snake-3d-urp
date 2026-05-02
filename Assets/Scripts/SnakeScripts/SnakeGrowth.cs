@@ -5,6 +5,7 @@ public class SnakeGrowth : MonoBehaviour
 {
     [SerializeField] private GameObject segmentPrefab;
     private List<Transform> segments = new List<Transform>();
+    public List<Transform> Segments => segments;
 
     public void Grow()
     {
@@ -19,7 +20,7 @@ public class SnakeGrowth : MonoBehaviour
             spawnPosition = segments[segments.Count - 1].position;
         }
 
-        GameObject newSegment = Instantiate(segmentPrefab, spawnPosition, Quaternion.identity);
+        GameObject newSegment = Instantiate(segmentPrefab, spawnPosition, transform.rotation);
         segments.Add(newSegment.transform);
     }
 }
