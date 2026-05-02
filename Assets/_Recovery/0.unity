@@ -560,6 +560,7 @@ GameObject:
   - component: {fileID: 832481916}
   - component: {fileID: 832481917}
   - component: {fileID: 832481918}
+  - component: {fileID: 832481919}
   m_Layer: 0
   m_Name: SnakeHead
   m_TagString: Untagged
@@ -730,6 +731,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SnakeCollision
   foodSpawner: {fileID: 1482440107}
+  snakeGrowth: {fileID: 832481919}
+--- !u!114 &832481919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 832481910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48fe659b789b94261a7af332e14da109, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SnakeGrowth
+  segmentPrefab: {fileID: 2228267164510182349, guid: 9d43e2c2a1d764d858d7705eff8700c0, type: 3}
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
