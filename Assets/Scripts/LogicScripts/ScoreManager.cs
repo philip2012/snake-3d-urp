@@ -8,7 +8,7 @@ public class ScoreManager: MonoBehaviour
 
     // tunables
     [SerializeField] private int baseFoodScore = 10;
-    [SerializeField] private float comboResetTime = 3f;
+    [SerializeField] private float comboResetTime = 4f;
 
     // getters for any script's interest in these values
     public int Score => score;
