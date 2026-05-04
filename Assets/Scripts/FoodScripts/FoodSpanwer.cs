@@ -4,7 +4,7 @@ public class FoodSpawner: MonoBehaviour
 {
     [SerializeField] private GameObject applePrefab;
     [SerializeField] private GameObject ground;
-    [SerializeField] private float spawnPadding = 1f;
+    [SerializeField] private float spawnPadding = 2f;
     [SerializeField] private float spawnHeightOffset = 0.5f;
 
     private Bounds groundBounds;
