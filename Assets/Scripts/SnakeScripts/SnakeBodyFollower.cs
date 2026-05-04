@@ -4,7 +4,7 @@ using System.Collections.Generic;
 public class SnakeBodyFollower: MonoBehaviour
 {
     [SerializeField] private SnakeGrowth snakeGrowth;
-    [SerializeField] private float segmentSpacing = 0.5f;
+    [SerializeField] private float segmentSpacing = 0.525f;
     [SerializeField] private float followSmoothness = 22f;
 
     private List<Vector3> positionHistory = new List<Vector3>();
