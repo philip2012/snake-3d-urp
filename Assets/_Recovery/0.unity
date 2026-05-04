@@ -720,6 +720,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SnakeController
   moveSpeed: 6.5
   turnSpeed: 360
+  maxMoveSpeed: 14
+  speedIncreasePerFood: 0.25
 --- !u!65 &832481912
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -871,6 +873,7 @@ MonoBehaviour:
   foodSpawner: {fileID: 1482440107}
   snakeGrowth: {fileID: 832481919}
   scoreManager: {fileID: 1755564664}
+  snakeController: {fileID: 832481911}
 --- !u!114 &832481919
 MonoBehaviour:
   m_ObjectHideFlags: 0
