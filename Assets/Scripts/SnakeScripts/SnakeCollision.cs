@@ -9,13 +9,13 @@ public class SnakeCollision: MonoBehaviour
 
     private bool isConsumingFood;
 
-    void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
-        if (isConsumingFood == true)
+        if (isConsumingFood)
         {
             return;
         }
-        if (other.CompareTag("Food") == false)
+        if (!other.CompareTag("Food"))
         {
             return;
         }
