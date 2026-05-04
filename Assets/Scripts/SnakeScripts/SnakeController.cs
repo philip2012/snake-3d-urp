@@ -3,8 +3,12 @@ using UnityEngine.InputSystem;
 
 public class SnakeController : MonoBehaviour
 {
-    public float moveSpeed = 6.5f;
-    public float turnSpeed = 360f;
+    [SerializeField] public float moveSpeed = 6.5f;
+    [SerializeField] public float turnSpeed = 360f;
+
+    // progressive dificulty tunables
+    [SerializeField] public float maxMoveSpeed = 14f;
+    [SerializeField] public float speedIncreasePerFood = 0.25f;
 
     private float turnInput;
 
@@ -37,5 +41,13 @@ public class SnakeController : MonoBehaviour
     private void HandleMovement()
     {
         transform.position += moveSpeed * Time.deltaTime * transform.forward;
+    }
+
+    public void IncreaseSpeed()
+    {
+        moveSpeed += speedIncreasePerFood;
+        moveSpeed = Mathf.Clamp(moveSpeed, 0f, maxMoveSpeed);
+
+        Debug.Log($"Speed: {moveSpeed}");
     }
 }
