@@ -6,11 +6,17 @@ public class SnakeCollision: MonoBehaviour
     [SerializeField] private SnakeGrowth snakeGrowth;
     [SerializeField] private ScoreManager scoreManager;
     [SerializeField] private SnakeController snakeController;
+    [SerializeField] private GameManager gameManager;
 
     private bool isConsumingFood;
 
     private void OnTriggerEnter(Collider other)
     {
+        if (other.CompareTag("Wall"))
+        {
+            gameManager.GameOver();
+        }
+        
         if (isConsumingFood)
         {
             return;

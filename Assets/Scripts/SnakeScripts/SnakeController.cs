@@ -10,10 +10,18 @@ public class SnakeController : MonoBehaviour
     [SerializeField] public float maxMoveSpeed = 14f;
     [SerializeField] public float speedIncreasePerFood = 0.25f;
 
+    // game over mechanism
+    private bool canMove = true;
+
     private float turnInput;
 
     void Update()
     {
+        if (!canMove)
+        {
+            return;
+        }
+
         ReadInput();
         HandleRotation();
         HandleMovement();
@@ -49,5 +57,10 @@ public class SnakeController : MonoBehaviour
         moveSpeed = Mathf.Clamp(moveSpeed, 0f, maxMoveSpeed);
 
         Debug.Log($"Speed: {moveSpeed}");
+    }
+
+    public void SetMovementEnabled(bool enabled)
+    {
+        canMove = enabled;
     }
 }
