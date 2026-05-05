@@ -1821,7 +1821,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FoodSpawner
   applePrefab: {fileID: 4024775591966762521, guid: 400a793a76910425c963c25384b6588f, type: 3}
   ground: {fileID: 1970345531}
-  spawnPadding: 1
+  spawnPadding: 3
   spawnHeightOffset: 0.5
 --- !u!4 &1482440108
 Transform:
