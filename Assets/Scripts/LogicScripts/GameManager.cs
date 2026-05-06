@@ -7,6 +7,9 @@ public class GameManager: MonoBehaviour
     private bool isGameOver;
     [SerializeField] private SnakeController snakeController;
 
+    // game over UI
+    [SerializeField] private GameOverUI gameOverUI;
+
     public void GameOver()
     {
         if (isGameOver)
@@ -16,6 +19,7 @@ public class GameManager: MonoBehaviour
         
         isGameOver = true;
         snakeController.SetMovementEnabled(false);
+        gameOverUI.Show();
         Debug.Log("Game Over");
     }
 
