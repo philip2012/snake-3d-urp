@@ -17,6 +17,13 @@ public class SnakeCollision: MonoBehaviour
             gameManager.GameOver();
         }
         
+        if (other.CompareTag("SnakeBody") && snakeGrowth.Segments.Count > 3)
+        {
+            gameManager.GameOver();
+            Debug.Log($"Self hit: {other.name} | Position: {other.transform.position}");
+            return;
+        }
+
         if (isConsumingFood)
         {
             return;

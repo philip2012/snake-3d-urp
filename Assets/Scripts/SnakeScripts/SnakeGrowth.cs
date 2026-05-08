@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using System.Collections;
 
 public class SnakeGrowth : MonoBehaviour
 {
@@ -22,5 +23,23 @@ public class SnakeGrowth : MonoBehaviour
 
         GameObject newSegment = Instantiate(segmentPrefab, spawnPosition, transform.rotation);
         segments.Add(newSegment.transform);
+
+        Collider segmentCollider = newSegment.GetComponent<Collider>();
+
+        if (segmentCollider != null)
+        {
+            segmentCollider.enabled = false;
+            StartCoroutine(EnableColliderAfterDelay(segmentCollider, 0.3f));
+        }
+    }
+
+    private IEnumerator EnableColliderAfterDelay(Collider segmentCollider, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+
+        if (segmentCollider != null)
+        {
+            segmentCollider.enabled = true;
+        }
     }
 }
