@@ -1711,7 +1711,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SnakeBodyFollower
   snakeGrowth: {fileID: 832481919}
-  segmentSpacing: 0.5
+  segmentSpacing: 0.6
   followSmoothness: 22
 --- !u!1 &832575517
 GameObject:
